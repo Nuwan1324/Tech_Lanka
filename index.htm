@@ -527,31 +527,160 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
+      <!-- Hero Section -->
     <section id="home" class="pt-24 pb-16 bg-gradient-dark text-white">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col-reverse lg:flex-row items-center justify-between">
-                <div class="lg:w-1/2 text-center lg:text-left animate-fadeIn">
-                    <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
-                        Transform Your Ideas Into Powerful Mobile Applications
-                    </h1>
-                    <p class="text-lg md:text-xl mb-8 text-gray-300">
-                        Sri Lanka's premier mobile app development company delivering innovative solutions for businesses of all sizes.
-                    </p>
-                    <div class="flex flex-col sm:flex-row justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
-                        <a href="#contact" class="btn-primary">Get Free Consultation</a>
-                        <a href="#portfolio" class="btn-secondary">View Our Work</a>
-                    </div>
-                </div>
-                <div class="lg:w-1/2 mb-10 lg:mb-0 animate-slideIn">
-                    <div class="relative">
-                        <div class="absolute inset-0 bg-red-800 rounded-lg transform translate-x-4 translate-y-4"></div>
-                        <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1470&auto=format&fit=crop" alt="Mobile App Development" class="relative z-10 rounded-lg shadow-2xl w-full h-auto">
-                    </div>
-                </div>
-            </div>
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col-reverse lg:flex-row items-center justify-between">
+      
+        <!-- Text Content -->
+        <div class="lg:w-1/2 text-center lg:text-left animate-fadeIn">
+          <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
+            Transform Your Ideas Into Powerful Mobile Applications
+          </h1>
+          <p class="text-lg md:text-xl mb-8 text-gray-300">
+            Sri Lanka's premier mobile app development company delivering innovative solutions for businesses of all sizes.
+          </p>
+          <div class="flex flex-col sm:flex-row justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
+            <a href="#contact" class="btn-primary">Get Free Consultation</a>
+            <a href="#portfolio" class="btn-secondary">View Our Work</a>
+          </div>
         </div>
-    </section>
+
+        <!-- Image Slider -->
+        <div class="lg:w-1/2 mb-10 lg:mb-0 relative overflow-hidden rounded-2xl shadow-2xl w-full h-64 md:h-96">
+          <div class="slider-container h-full relative">
+            <!-- Mobile App Development Images -->
+            <img src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" 
+                 class="slider-image absolute inset-0 w-full h-full object-cover rounded-2xl transition-all duration-1000" 
+                 alt="Development team working on app project"
+                 data-transition="fade" />
+               
+            <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&auto=format&fit=crop&w=1364&q=80" 
+                 class="slider-image absolute inset-0 w-full h-full object-cover rounded-2xl transition-all duration-1000" 
+                 alt="Developer coding mobile application"
+                 data-transition="slide-left" />
+               
+            <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1470&auto=format&fit=crop" 
+                 class="slider-image absolute inset-0 w-full h-full object-cover rounded-2xl transition-all duration-1000" 
+                 alt="Mobile app interface design process"
+                 data-transition="zoom-out" />
+               
+            <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" 
+                 class="slider-image absolute inset-0 w-full h-full object-cover rounded-2xl transition-all duration-1000" 
+                 alt="Team collaborating on app design"
+                 data-transition="flip" />
+               
+            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" 
+                 class="slider-image absolute inset-0 w-full h-full object-cover rounded-2xl transition-all duration-1000" 
+                 alt="Testing app on multiple devices"
+                 data-transition="slide-up" />
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <style>
+    /* Transition Styles */
+    .slider-image {
+      position: absolute;
+      opacity: 0;
+      transform: scale(1);
+      z-index: 1;
+    }
+  
+    .slider-image.active {
+      opacity: 1;
+      z-index: 2;
+    }
+  
+    /* Fade Transition */
+    [data-transition="fade"] {
+      transition: opacity 1.2s ease, transform 1.2s ease;
+    }
+  
+    /* Slide Left Transition */
+    [data-transition="slide-left"] {
+      transform: translateX(100%);
+      transition: opacity 1s ease, transform 1s cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+    [data-transition="slide-left"].active {
+      transform: translateX(0);
+    }
+  
+    /* Zoom Out Transition */
+    [data-transition="zoom-out"] {
+      transform: scale(1.2);
+      transition: opacity 1s ease, transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    [data-transition="zoom-out"].active {
+      transform: scale(1);
+    }
+  
+    /* Flip Transition */
+    [data-transition="flip"] {
+      transform: perspective(1000px) rotateY(90deg);
+      transform-origin: left center;
+      transition: opacity 0.8s ease, transform 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    }
+    [data-transition="flip"].active {
+      transform: perspective(1000px) rotateY(0);
+    }
+  
+    /* Slide Up Transition */
+    [data-transition="slide-up"] {
+      transform: translateY(30%);
+      transition: opacity 1s ease, transform 1s cubic-bezier(0.33, 1, 0.68, 1);
+    }
+    [data-transition="slide-up"].active {
+      transform: translateY(0);
+    }
+  </style>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const sliderImages = document.querySelectorAll('.slider-image');
+    let currentIndex = 0;
+    const slideDuration = 6000; // 6 seconds per slide
+  
+    // Initialize slider
+    function initSlider() {
+      if (sliderImages.length === 0) return;
+    
+      // Set initial active slide
+      sliderImages[currentIndex].classList.add('active');
+    }
+  
+    // Transition to next slide with unique effect
+    function nextSlide() {
+      // Remove current active class
+      sliderImages[currentIndex].classList.remove('active');
+      
+      // Update index
+      currentIndex = (currentIndex + 1) % sliderImages.length;
+    
+      // Apply transition effect
+      const nextImage = sliderImages[currentIndex];
+      nextImage.classList.add('active');
+    
+      // Reset transform after animation completes
+      setTimeout(() => {
+        nextImage.style.transform = '';
+      }, 1000);
+    }
+  
+    // Initialize the slider
+    initSlider();
+  
+    // Start slideshow
+    const slideInterval = setInterval(nextSlide, slideDuration);
+  
+    // Clean up
+    return () => clearInterval(slideInterval);
+  });
+  </script>
+
 
     <!-- Stats Section -->
     <section class="py-16 bg-gray-100">
